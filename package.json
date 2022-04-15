@@ -2,24 +2,33 @@
   "name": "potato-discord-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "bot.ts",
   "scripts": {
-    "start": "ts-node index.ts"
+    "clean-install": "rmdir /s /q node_modules && npm install",
+    "deploy": "npm install && ts-node bot.ts",
+    "dev": "nodemon bot.ts --ignore persistent/",
+    "eslint": "eslint . --ext .ts,.tsx",
+    "eslint-fix": "eslint . --ext .ts,.tsx --fix",
+    "start": "ts-node bot.ts"
   },
-  "author": "PotatoPanda",
+  "author": "zhus-k",
   "license": "ISC",
   "dependencies": {
     "@discordjs/builders": "^0.12.0",
     "@discordjs/rest": "^0.3.0",
-    "discord-api-types": "^0.27.2",
+    "archiver": "^5.3.0",
+    "discord-api-types": "^0.31.0",
     "discord.js": "^13.6.0",
-    "dotenv": "^10.0.0",
-    "xregexp": "^5.1.0"
+    "dotenv": "^16.0.0",
+    "puppeteer": "^13.5.2"
   },
   "devDependencies": {
-    "@types/node": "^17.0.21",
-    "eslint": "^8.3.0",
+    "@types/archiver": "^5.3.1",
+    "@types/node": "^17.0.23",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^8.13.0",
     "tslib": "^2.3.1",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.3"
   }
 }
